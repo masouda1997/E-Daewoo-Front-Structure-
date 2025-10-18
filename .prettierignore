@@ -1,0 +1,8 @@
+gulpfile.ts
+k8s
+node_modules
+public
+css
+themes
+*.yml
+.next
