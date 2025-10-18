@@ -5,7 +5,8 @@ module.exports = {
 	extends: ['@commitlint/config-conventional'],
 	rules: {
 		// 0. 'commit-number' every commit should have a commit code like #12345..
-		'task-number': [2, 'always', TASK_REGEX],
+		// ✅ Require a task number pattern (# followed by digits) anywhere in the header
+		'header-match-pattern': [2, 'always', TASK_REGEX],
 		// 1. Types allowed in your project
 		'type-enum': [
 			2,
