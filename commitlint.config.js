@@ -1,12 +1,11 @@
 // commitlint.config.js
-const TASK_REGEX = /^#\d+ $/g;
 
 module.exports = {
 	extends: ['@commitlint/config-conventional'],
 	rules: {
 		// 0. 'commit-number' every commit should have a commit code like #12345..
 		// ✅ Require a task number pattern (# followed by digits) anywhere in the header
-		'header-match-pattern': [2, 'always', TASK_REGEX],
+		'header-match-pattern': [2, 'always', /^#\d+ $/g],
 		// 1. Types allowed in your project
 		'type-enum': [
 			2,
