@@ -1,20 +1,22 @@
 // commitlint.config.js
 
+// commitlint.config.js
+
 module.exports = {
 	extends: ['@commitlint/config-conventional'],
 	rules: {
-		// 1. Header format: #number TYPE(optional scope): message
+		// Enforce #task TYPE(optional scope): message
 		'header-match-pattern': [
 			2,
 			'always',
-			/^#\d+\s+(feat|fix|docs|style|refactor|perf|test|chore|ci)(\([a-z0-9_-]+\))?:\s.+$/,
+			/^#\d+\s+(feat|fix|docs|style|refactor|perf|test|chore|ci)(\([a-zA-Z0-9_-]+\))?:\s.+$/,
 		],
 
-		// 2. Subject formatting
+		// Subject formatting
 		'subject-case': [2, 'never', ['start-case', 'pascal-case']],
 		'subject-full-stop': [2, 'never', '.'],
 
-		// 3. Max length of 200 chars
+		// Max header length
 		'header-max-length': [2, 'always', 200],
 	},
 };
