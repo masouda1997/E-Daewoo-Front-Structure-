@@ -4,7 +4,7 @@ module.exports = {
 	parserPreset: {
 		parserOpts: {
 			headerPattern:
-				/^#\d{1,10}\s+(feat|fix|docs|refactor|ci|chore|style|test)(\([a-zA-Z0-9_-]+\))?:\s.{1,200}$/,
+				'/^#\d{1,10}\s+(feat|fix|docs|refactor|ci|chore|style|test)(\([a-zA-Z0-9_-]+\))?:\s.{1,200}$/',
 		},
 	},
 	rules: {
