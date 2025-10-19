@@ -15,7 +15,7 @@ module.exports = {
 				'perf', // a code change that improves performance
 				'test', // adding missing tests or correcting existing tests
 				'chore', // changes to the build process or auxiliary tools
-				'ci', // CI related changes
+				'ci', // CI related
 			],
 		],
 		// 2. (Optional) You can enforce scopes if you like:
