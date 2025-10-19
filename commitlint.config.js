@@ -13,50 +13,9 @@ export default {
 				'header-match-pattern': ({ header }, when = 'always', regex) => {
 					const pattern = new RegExp(regex);
 					const valid = pattern.test(header);
-					return [
-						valid,
-						`Commit message must match the pattern:
-#123 feat: message
-or
-#123 fix(ui): message
-and message must be ≤ 200 chars.`,
-					];
+					return [valid];
 				},
 			},
 		},
 	],
 };
-
-// // commitlint.config.js
-
-// module.exports = {
-// 	extends: ['@commitlint/config-conventional'],
-// 	rules: {
-// 		// 0. 'commit-number' every commit should have a commit code like #12345..
-// 		// ✅ Require a task number pattern (# followed by digits) anywhere in the header
-// 		'header-match-pattern': [2, 'always', /^#\d+ $/g],
-// 		// 1. Types allowed in your project
-// 		'type-enum': [
-// 			2,
-// 			'always',
-// 			[
-// 				'feat', // new feature
-// 				'fix', // bug fix
-// 				'docs', // documentation only changes
-// 				'style', // formatting, missing semi-colons, etc
-// 				'refactor', // code change that neither fixes a bug nor adds a feature
-// 				'perf', // a code change that improves performance
-// 				'test', // adding missing tests or correcting existing tests
-// 				'chore', // changes to the build process or auxiliary tools
-// 				'ci', // CI related changes
-// 			],
-// 		],
-// 		// 2. (Optional) You can enforce scopes if you like:
-// 		// 'scope-enum': [2, 'always', ['api', 'ui', 'build', 'deps']],
-// 		// 3. Subject must be lowercase, no trailing period
-// 		'subject-case': [2, 'never', ['start-case', 'pascal-case']],
-// 		'subject-full-stop': [2, 'never', '.'],
-// 		// 4. Header (type + scope + subject) max length
-// 		'header-max-length': [2, 'always', 200],
-// 	},
-// };
