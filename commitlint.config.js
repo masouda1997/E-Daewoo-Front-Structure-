@@ -4,7 +4,7 @@ const config = {
 		'header-pattern': [
 			2,
 			'always',
-			/^.*#\d+.*(feat|fix|docs|refactor|ci|chore|style|test)(\([a-zA-Z0-9_-]+\))?:\s.{1,200}$/,
+			/^.*#\d+.*(feat|fix|docs|refactor|ci|chore|style|test)(\([a-zA-Z0-9_-]+\))?:\s.{1,180}$/,
 		],
 		'header-max-length': [2, 'always', 200],
 	},
