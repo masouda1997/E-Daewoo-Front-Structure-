@@ -1,39 +1,41 @@
-module.exports = {
-	extends: ['@commitlint/config-conventional'],
-	rules: {
-		'header-starts-with': [2, 'always', '#'],
-		'type-enum': [
-			2,
-			'always',
-			['feat', 'fix', 'docs', 'refactor', 'ci', 'chore', 'style', 'test'],
-		],
-		'subject-max-length': [2, 'always', 200],
-	},
-};
+// export default { extends: ['@commitlint/config-conventional'] };
 
-// export default {
+// module.exports = {
+// 	extends: ['@commitlint/config-conventional'],
 // 	rules: {
-// 		// Must start with # and a number, then space
-// 		'header-match-pattern': [
+// 		'header-starts-with': [2, 'always', '#'],
+// 		'type-enum': [
 // 			2,
 // 			'always',
-// 			/^#\d{1,10}\s+(feat|fix|docs|refactor|ci|chore|style|test)(\([a-zA-Z0-9_-]+\))?:\s.{1,200}$/,
+// 			['feat', 'fix', 'docs', 'refactor', 'ci', 'chore', 'style', 'test'],
 // 		],
+// 		'subject-max-length': [2, 'always', 200],
 // 	},
-// 	plugins: [
-// 		{
-// 			rules: {
-// 				'header-match-pattern': ({ header }, when = 'always', regex) => {
-// 					const pattern = new RegExp(regex);
-// 					const valid = pattern.test(header);
-// 					return [valid];
-// 				},
-// 			},
-// 		},
-// 	],
 // };
 
-// // commitlint.config.js
+export default {
+	rules: {
+		// Must start with # and a number, then space
+		'header-match-pattern': [
+			2,
+			'always',
+			/^#\d{1,10}\s+(feat|fix|docs|refactor|ci|chore|style|test)(\([a-zA-Z0-9_-]+\))?:\s.{1,200}$/,
+		],
+	},
+	plugins: [
+		{
+			rules: {
+				'header-match-pattern': ({ header }, when = 'always', regex) => {
+					const pattern = new RegExp(regex);
+					const valid = pattern.test(header);
+					return [valid];
+				},
+			},
+		},
+	],
+};
+
+// commitlint.config.js
 
 // module.exports = {
 // 	extends: ['@commitlint/config-conventional'],
