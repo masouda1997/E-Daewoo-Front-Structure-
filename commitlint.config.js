@@ -1,5 +1,4 @@
 // export default { extends: ['@commitlint/config-conventional'] };
-// commitlint.config.js
 const config = {
 	rules: {
 		'header-pattern': [2, 'always', /^.*#\d+.*$/],
