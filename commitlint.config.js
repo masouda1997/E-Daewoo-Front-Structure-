@@ -1,11 +1,10 @@
 // export default { extends: ['@commitlint/config-conventional'] };
 const config = {
 	rules: {
-		'header-pattern': [2, 'always', /^.*#\d+.*$/],
-		'header-pattern-message': [
+		'header-pattern': [
 			2,
 			'always',
-			'Commit must contain an issue number like #123 or #000349',
+			/^.*#\d+.*(feat|fix|docs|refactor|ci|chore|style|test)(\([a-zA-Z0-9_-]+\))?:\s.{1,200}$/,
 		],
 		'header-max-length': [2, 'always', 200],
 	},
