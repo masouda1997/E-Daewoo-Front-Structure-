@@ -1,14 +1,20 @@
-#!/bin/sh
 
-# Turn off exit-on-error
+# # Turn off exit-on-error
+# set +e
+
+# npx commitlint --edit "$1" > /dev/null 2>&1
+# status=$?
+
+# # Turn exit-on-error back on
+# set -e
+#!/bin/sh
 set +e
 
-npx commitlint --edit "$1" > /dev/null 2>&1
+# Show output so we can see why it passes/fails
+npx --no-install commitlint --edit "$1"
 status=$?
 
-# Turn exit-on-error back on
 set -e
-
 if [ $status -ne 0 ]; then
    echo ""
    echo "❌ Invalid commit message format"
