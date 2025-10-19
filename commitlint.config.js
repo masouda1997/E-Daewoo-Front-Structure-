@@ -1,20 +1,33 @@
-// commitlint.config.js
-
-module.exports = {
-	extends: ['@commitlint/config-conventional'],
+export default {
 	rules: {
-		// Require #number TYPE(optional scope): message
+		// Must start with # and a number, then space
 		'header-match-pattern': [
 			2,
 			'always',
-			/^#\d+\s+(feat|fix|docs|style|refactor|perf|test|chore|ci)(\([a-zA-Z0-9_-]+\))?:\s.+$/,
+			/^#\d{1,10}\s+(feat|fix|docs|refactor|ci|chore|style|test)(\([a-zA-Z0-9_-]+\))?:\s.{1,200}$/,
 		],
-
-		'subject-case': [2, 'never', ['start-case', 'pascal-case']],
-		'subject-full-stop': [2, 'never', '.'],
-		'header-max-length': [2, 'always', 200],
 	},
+	plugins: [
+		{
+			rules: {
+				'header-match-pattern': ({ header }, when = 'always', regex) => {
+					const pattern = new RegExp(regex);
+					const valid = pattern.test(header);
+					return [
+						valid,
+						`Commit message must match the pattern:
+#123 feat: message
+or
+#123 fix(ui): message
+and message must be ≤ 200 chars.`,
+					];
+				},
+			},
+		},
+	],
 };
+
+// // commitlint.config.js
 
 // module.exports = {
 // 	extends: ['@commitlint/config-conventional'],
