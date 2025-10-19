@@ -1,5 +1,5 @@
 #!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
+# . "$(dirname "$0")/_/husky.sh"
 # Turn off exit-on-error
 set +e
 
@@ -13,13 +13,13 @@ if [ $status -ne 0 ]; then
    echo ""
    echo "❌ Invalid commit message format"
    echo ""
-   echo "✅ Correct Format →  <task number> <type>(<scope>): <subject>"
+   echo "✅ Correct Format →   <type>(<scope>):<task number> <subject>"
    echo ""
    echo "📑 Examples:"
-   echo "    #3334 feat: add login functionality"
-   echo "    #03004 fix(ui): correct button alignment"
+   echo "     feat: #3334 add login functionality"
+   echo "     fix(ui): #03004 correct button alignment"
    echo ""
-   echo echo "💢 Allowed types:🔸 feat → new feature"
+   echo "💢 Allowed types:🔸 feat → new feature"
    echo "                      🔸 fix → bug fix"
    echo "                      🔸 docs → documentation only changes"
    echo "                      🔸 style → formatting, missing semi-colons, etc"
