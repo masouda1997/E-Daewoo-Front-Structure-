@@ -1,4 +1,6 @@
-export default {
+/** @type {import('@commitlint/types').UserConfig} */
+
+module.exports = {
 	parserPreset: {
 		parserOpts: {
 			headerPattern:
