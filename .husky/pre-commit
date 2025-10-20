@@ -1,7 +1,8 @@
 # #!/bin/sh
 
 pnpm run lint &&  pnpm run format  && pnpm run format:check
-git add .
+# not sure to place bottom row
+# git add .
 
 
 
