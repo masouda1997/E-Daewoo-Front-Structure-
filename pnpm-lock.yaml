@@ -7,6 +7,9 @@ settings:
 importers:
    .:
       dependencies:
+         '@ant-design/nextjs-registry':
+            specifier: ^1.1.0
+            version: 1.1.0(@ant-design/cssinjs@1.24.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(antd@5.27.5(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(next@15.5.6(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
          '@ant-design/v5-patch-for-react-19':
             specifier: ^1.0.3
             version: 1.0.3(antd@5.27.5(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -19,6 +22,9 @@ importers:
          '@tanstack/react-query-devtools':
             specifier: ^5.90.2
             version: 5.90.2(@tanstack/react-query@5.90.5(react@19.1.0))(react@19.1.0)
+         antd:
+            specifier: ^5.27.5
+            version: 5.27.5(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
          next:
             specifier: 15.5.6
             version: 15.5.6(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -130,6 +136,18 @@ packages:
          }
       engines: { node: '>=8' }
       peerDependencies:
+         react: '>=16.0.0'
+         react-dom: '>=16.0.0'
+
+   '@ant-design/nextjs-registry@1.1.0':
+      resolution:
+         {
+            integrity: sha512-zZ9SKyqTHonUK7l/z/ixpVx0LSnZTlIqYFOccSDI7jx7ojCMTGxzkl3ugGWPPh8xPYDsVxqzwJZBic84H7LgLw==,
+         }
+      peerDependencies:
+         '@ant-design/cssinjs': ^1.24.0
+         antd: ^5.0.0
+         next: ^14.0.0 || ^15.0.0
          react: '>=16.0.0'
          react-dom: '>=16.0.0'
 
@@ -4513,6 +4531,14 @@ snapshots:
          '@babel/runtime': 7.28.4
          classnames: 2.5.1
          rc-util: 5.44.4(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+         react: 19.1.0
+         react-dom: 19.1.0(react@19.1.0)
+
+   '@ant-design/nextjs-registry@1.1.0(@ant-design/cssinjs@1.24.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(antd@5.27.5(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(next@15.5.6(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+      dependencies:
+         '@ant-design/cssinjs': 1.24.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+         antd: 5.27.5(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+         next: 15.5.6(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
          react: 19.1.0
          react-dom: 19.1.0(react@19.1.0)
 

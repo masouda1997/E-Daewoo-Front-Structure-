@@ -15,5 +15,6 @@
 	"endOfLine": "lf",
 	"bracketSameLine": false,
 	"proseWrap": "always",
-	"quoteProps": "as-needed"
+	"quoteProps": "as-needed",
+	"formatOnSave": true
 }
