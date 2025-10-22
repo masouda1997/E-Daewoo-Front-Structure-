@@ -1,5 +1,5 @@
 import { AntdRegistry } from '@ant-design/nextjs-registry';
-import { ConfigProvider, Layout, App as AntApp } from 'antd';
+import { ConfigProvider, App as AntApp } from 'antd';
 import faIR from 'antd/locale/fa_IR';
 // import theme from "./config/theme";
 
@@ -15,9 +15,7 @@ export default function AntdProvider({
 				locale={faIR}
 				// theme={theme}
 			>
-				<AntApp>
-					<Layout className="min-h-screen">{children}</Layout>
-				</AntApp>
+				<AntApp>{children}</AntApp>
 			</ConfigProvider>
 		</AntdRegistry>
 	);

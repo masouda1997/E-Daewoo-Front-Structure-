@@ -1,9 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
+import counterReducer from './features/counter/counterSlice';
 
 // Returns a new store instance with an empty set of reducers
 export const makeStore = () => {
 	return configureStore({
-		reducer: {},
+		reducer: {
+			counter: counterReducer,
+		},
 	});
 };
 
