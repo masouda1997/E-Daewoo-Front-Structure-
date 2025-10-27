@@ -10,7 +10,7 @@ axios.defaults.headers.post['Content-Type'] = 'application/json; charset=utf-8';
 
 const AxiosProvider = ({ children }: { children: React.ReactNode }) => {
 	const [api, contextHolder] = notification.useNotification();
-
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	const errorComposer = (error: any) => {
 		const statusCode = error?.response?.status;
 
@@ -96,6 +96,7 @@ const AxiosProvider = ({ children }: { children: React.ReactNode }) => {
 	}, [api]);
 
 	axios.interceptors.request.use(async (request) => {
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		const session = (await getSession()) as any;
 		if (session) {
 			request.headers.Authorization = `Bearer ${session.accessToken}`;
