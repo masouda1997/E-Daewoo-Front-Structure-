@@ -1,10 +1,12 @@
 import Counter from '../components/Counter';
+import ServerComponent from '@/providers/reactQuery/ServerComponentDemo';
 
 export default function Home() {
 	return (
-		<div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen  pb-20 gap-16 !sm:p-20">
+		<div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen  pb-20 gap-16 !sm:p-20 bg-blue-200">
 			<main className="flex p-10 bg-red-300  gap-[32px] row-start-2 items-center  sm:items-start ">
 				<Counter />
+				<ServerComponent />
 			</main>
 		</div>
 	);

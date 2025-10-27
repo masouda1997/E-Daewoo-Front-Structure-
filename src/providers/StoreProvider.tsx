@@ -1,5 +1,5 @@
-'use client';
 // Any component that interacts with the Redux store (creating it, providing it, reading from it, or writing to it) needs to be a client component. This is because accessing the store requires React context, and context is only available in client components.
+'use client';
 
 import { useRef } from 'react';
 import { Provider } from 'react-redux';
