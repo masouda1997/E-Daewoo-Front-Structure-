@@ -1,8 +1,8 @@
 # #!/bin/sh
 
 pnpm run lint &&  pnpm run format  && pnpm run format:check
-# not sure to place bottom row
-# git add .
+# if you add bottom line you cant stagged file separately if and you have to comment it.
+git add .
 
 
 
