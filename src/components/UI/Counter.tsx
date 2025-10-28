@@ -6,7 +6,7 @@ import {
 	decrement,
 	reset,
 	incrementByAmount,
-} from '@/lib/features/counter/counterSlice';
+} from '@/features/counter/counterSlice';
 import { useState } from 'react';
 
 export default function Counter() {

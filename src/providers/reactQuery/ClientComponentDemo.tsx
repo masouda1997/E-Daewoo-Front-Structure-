@@ -12,9 +12,10 @@ export function ClientComponent() {
 		<div>
 			inside the client component:
 			<figure>
-				<Image
+				<img
 					src={data.sprites.front_shiny}
 					height={200}
+					width={200}
 					alt={data.name}
 				/>
 				<h2>

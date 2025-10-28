@@ -1,20 +1,20 @@
-import './globals.css';
+import '../styles/globals.css';
 import type { Metadata } from 'next';
 import AntdProvider from '../providers/AntdProvider';
 import StoreProvider from '../providers/StoreProvider';
-import { Geist, Geist_Mono } from 'next/font/google';
+// import { Geist, Geist_Mono } from 'next/font/google';
 import ReactQueryProviders from '@/providers/reactQuery/ReactQueryProvider';
-// import { AntdRegistry } from '@ant-design/nextjs-registry';
+import SessionProviderWrapper from '@/providers/SessionProviderWrapper';
 
-const geistSans = Geist({
-	variable: '--font-geist-sans',
-	subsets: ['latin'],
-});
+// const geistSans = Geist({
+// 	variable: '--font-geist-sans',
+// 	subsets: ['latin'],
+// });
 
-const geistMono = Geist_Mono({
-	variable: '--font-geist-mono',
-	subsets: ['latin'],
-});
+// const geistMono = Geist_Mono({
+// 	variable: '--font-geist-mono',
+// 	subsets: ['latin'],
+// });
 
 export const metadata: Metadata = {
 	title: 'Create Next App',
@@ -27,15 +27,15 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
-			<body
-				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-			>
-				<StoreProvider>
-					<ReactQueryProviders>
-						<AntdProvider>{children}</AntdProvider>
-					</ReactQueryProviders>
-				</StoreProvider>
+		<html lang="fa" dir="rtl">
+			<body className={`antialiased`}>
+				<SessionProviderWrapper>
+					<StoreProvider>
+						<ReactQueryProviders>
+							<AntdProvider>{children}</AntdProvider>
+						</ReactQueryProviders>
+					</StoreProvider>
+				</SessionProviderWrapper>
 			</body>
 		</html>
 	);
