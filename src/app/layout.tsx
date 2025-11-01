@@ -28,12 +28,30 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="fa" dir="rtl">
-			<body className={`antialiased`}>
+			<head>
+				<script
+					dangerouslySetInnerHTML={{
+						__html: `
+                  (function(){
+                  try {
+                     var t = localStorage.getItem('theme');
+                     if (t === 'dark') {
+                        document.documentElement.classList.add('dark');
+                     } else {
+                        document.documentElement.classList.remove('dark');
+                     }
+                  } catch(e) {}
+                  })();
+                           `,
+					}}
+				/>
+			</head>
+			<body className={`antialiased theme-root`}>
 				<SessionProviderWrapper>
 					<StoreProvider>
-						<ReactQueryProviders>
-							<AntdProvider>{children}</AntdProvider>
-						</ReactQueryProviders>
+						<AntdProvider>
+							<ReactQueryProviders>{children}</ReactQueryProviders>
+						</AntdProvider>
 					</StoreProvider>
 				</SessionProviderWrapper>
 			</body>
