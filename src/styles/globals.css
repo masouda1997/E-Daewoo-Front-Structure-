@@ -3,43 +3,12 @@
 
 /* @custom-variant dark (&:is(.dark *));
 @custom-variant light (&:is(.light *));
-
-@theme inline {
-   --color-background: var(--background);
-   --color-foreground: var(--foreground);
-   --font-sans: var(--font-geist-sans);
-   --font-mono: var(--font-geist-mono);
-   --color-sidebar: var(--sidebar);
-   --color-ring: var(--ring);
-   --color-input: var(--input);
-   --color-border: var(--border);
-   --color-destructive: var(--destructive);
-   --color-accent-foreground: var(--accent-foreground);
-   --color-accent: var(--accent);
-   --color-muted-foreground: var(--muted-foreground);
-   --color-muted: var(--muted);
-   --color-secondary-foreground: var(--secondary-foreground);
-   --color-secondary: var(--secondary);
-   --color-primary-foreground: var(--primary-foreground);
-   --color-primary: var(--primary);
-   --color-popover-foreground: var(--popover-foreground);
-   --color-popover: var(--popover);
-   --color-card-foreground: var(--card-foreground);
-   --color-card: var(--card);
-   --radius-sm: calc(var(--radius) - 4px);
-   --radius-md: calc(var(--radius) - 2px);
-   --radius-lg: var(--radius);
-   --radius-xl: calc(var(--radius) + 4px);
-} */
-
-/* ========== Core palette mapped to your colors ========== */
-/* Your palette light:
+palette light:
    - #FAF9EE  -> background (warm, very light   )
    - #A2AF9B  -> primary (soft green)
    - #DCCFC0  -> secondary (warm beige)
    - #EEEEEE  -> muted surface / subtle neutrals
-*/
-/* Your palette dark:
+ Your palette dark:
    - #1C1B19  -> background (warm, very light   )
    - #B8C6A9 -> primary (soft green)
    - #E6D9C9 -> secondary (warm beige)
@@ -48,53 +17,31 @@
    - #D1C9BD -> text secondary
 */
 
-/* Light (default) */
 :root {
-	/* these are the names used by @theme inline */
-	--background: #faf9ee; /* page background */
-	--foreground: #17202e; /* default text color */
-	--card: #ffffff; /* content card background */
-	--card-foreground: #17202e;
-	--popover: #ffffff;
-	--popover-foreground: #17202e;
-	--sidebar: #eeeeee; /* sider background */
-	--sider-foreground: #17202e; /* sider text color (alias if needed) */
-	--accent: #a2af9b;
-	--accent-foreground: #ffffff;
-	--primary: #a2af9b;
-	--primary-foreground: #ffffff;
-	--secondary: #dccfc0;
-	--muted: #eeeeee;
-	--muted-foreground: #777777;
-	--ring: 0 0 0 3px rgba(162, 175, 155, 0.12);
-	--input: #ffffff;
-	--border: #e6e6e6;
-	--destructive: #e04e4e;
-	--radius: 12px;
-	/* compatibility/aliases you used elsewhere */
-	--brand-bg: var(--background);
-	--brand-primary: var(--primary);
-	--layout-bg: var(--background);
-	--header-bg: var(--muted);
-	--header-foreground: var(--foreground);
-	--content-bg: var(--card);
+	--color-bg: #faf9ee;
+	--color-primary: #a2af9b;
+	--color-secondary: #dccfc0;
+	--color-surface-muted: #eeeeee;
+	--color-text-primary: #141414;
+	--color-text-secondary: #555555;
+	--border-radius-base: 8px;
+	--font-size-base: 14px;
+	--button-border-radius: 6px;
+	--input-bg-container: #ffffff;
+	--card-bg: #fff;
 }
-
-/* Dark mode overrides */
 html.dark {
-	--background: #17202e;
-	--foreground: #faf9ee;
-	--card: #22303a;
-	--card-foreground: #faf9ee;
-	--popover: #22303a;
-	--popover-foreground: #faf9ee;
-	--sidebar: #1f2a33;
-	--sider-foreground: #faf9ee;
-	--primary: #a2af9b; /* keep accent color */
-	--muted: #1f2a33;
-	--muted-foreground: #9daaa0;
-	--border: #29343a;
-	--ring: 0 0 0 3px rgba(162, 175, 155, 0.08);
+	--color-bg: #1c1b19;
+	--color-primary: #b8c6a9;
+	--color-secondary: #e6d9c9;
+	--color-surface-muted: #2a2825;
+	--color-text-primary: #f8f5ed;
+	--color-text-secondary: #d1c9bd;
+	--border-radius-base: 8px;
+	--font-size-base: 14px;
+	--button-border-radius: 6px;
+	--input-bg-container: #252423;
+	--card-bg: #221f1c;
 }
 
 /* ========== Page basics ========== */
@@ -104,12 +51,16 @@ html {
 	direction: rtl !important;
 }
 
+/* Utility: make it easy to use CSS variables in your app styles */
 body {
-	font-family: var(--font-peyda), sans-serif;
+	background-color: var(--color-bg);
+	color: var(--color-text-primary);
+	font-size: var(--font-size-base);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 	direction: rtl !important;
 }
 
-/* Force rtl utility */
 .rtl,
 .rtl * {
 	direction: rtl;
