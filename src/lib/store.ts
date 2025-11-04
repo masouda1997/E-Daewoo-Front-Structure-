@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import counterReducer from '../features/counter/counterSlice';
-import themeReducer from '../features/theme/themeSlice';
+import themeReducer from '@/features/theme/themeSlice';
+import authReducer from '@/features/auth/authSlice';
 
 // Returns a new store instance with an empty set of reducers
 export const makeStore = () => {
@@ -8,6 +9,7 @@ export const makeStore = () => {
 		reducer: {
 			counter: counterReducer,
 			theme: themeReducer,
+			auth: authReducer,
 		},
 	});
 };

@@ -4,7 +4,6 @@ import AntdProvider from '../providers/AntdProvider';
 import StoreProvider from '../providers/StoreProvider';
 // import { Geist, Geist_Mono } from 'next/font/google';
 import ReactQueryProviders from '@/providers/reactQuery/ReactQueryProvider';
-import SessionProviderWrapper from '@/providers/SessionProviderWrapper';
 
 // const geistSans = Geist({
 // 	variable: '--font-geist-sans',
@@ -47,13 +46,13 @@ export default function RootLayout({
 				/>
 			</head>
 			<body className={`antialiased theme-root`}>
-				<SessionProviderWrapper>
-					<StoreProvider>
-						<AntdProvider>
-							<ReactQueryProviders>{children}</ReactQueryProviders>
-						</AntdProvider>
-					</StoreProvider>
-				</SessionProviderWrapper>
+				{/* <SessionProviderWrapper> */}
+				<StoreProvider>
+					<AntdProvider>
+						<ReactQueryProviders>{children}</ReactQueryProviders>
+					</AntdProvider>
+				</StoreProvider>
+				{/* </SessionProviderWrapper> */}
 			</body>
 		</html>
 	);
