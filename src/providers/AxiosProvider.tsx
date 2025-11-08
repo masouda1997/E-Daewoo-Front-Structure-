@@ -2,7 +2,7 @@
 // providers/AxiosProvider.tsx
 
 import axios from 'axios';
-import api from '@/lib/api';
+import api from '@/services/api';
 import { notification } from 'antd';
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useRef } from 'react';
@@ -217,7 +217,6 @@ const AxiosProvider: React.FC<Props> = ({ children }) => {
 		// run once on mount
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
-
 	return (
 		<>
 			{contextHolder}
